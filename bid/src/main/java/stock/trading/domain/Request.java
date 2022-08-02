@@ -71,6 +71,9 @@ public class Request {
     }
 
     public void buy() {
+
+        if(true) return;
+
         Bought bought = new Bought(this);
         bought.publishAfterCommit();
     }
@@ -80,7 +83,10 @@ public class Request {
         sold.publishAfterCommit();
     }
 
-    public void test() {}
+    public void test() {
+
+        System.out.println("test");
+    }
 
     public static void changeState(Traded traded) {
         /** Example 1:  new item 
