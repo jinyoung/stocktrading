@@ -37,7 +37,7 @@ public class Ask {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process   */
         
         repository().findById(askRequested.get???()).ifPresent(ask->{
             
@@ -46,7 +46,7 @@ public class Ask {
 
 
          });
-        */
+     
 
     }
 }
