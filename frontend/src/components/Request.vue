@@ -86,6 +86,14 @@
             >
                 Test
             </v-btn>
+            <v-btn
+                    v-if="!editMode"
+                    color="deep-purple lighten-2"
+                    text
+                    @click="option"
+            >
+                Option
+            </v-btn>
         </v-card-actions>
 
         <v-snackbar
@@ -213,6 +221,21 @@
                 try {
                     if(!this.offline) {
                         var temp = await axios.put(axios.fixUrl(this.value._links.test.href))
+                        for(var k in temp.data) {
+                            this.value[k]=temp.data[k];
+                        }
+                    }
+
+                    this.editMode = false;
+                } catch(e) {
+                    this.snackbar.status = true
+                    this.snackbar.text = e
+                }
+            },
+            async option() {
+                try {
+                    if(!this.offline) {
+                        var temp = await axios.put(axios.fixUrl(this.value._links.option.href))
                         for(var k in temp.data) {
                             this.value[k]=temp.data[k];
                         }
