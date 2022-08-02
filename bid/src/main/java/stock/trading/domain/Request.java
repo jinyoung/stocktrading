@@ -7,7 +7,6 @@ import lombok.Data;
 import stock.trading.BidApplication;
 import stock.trading.domain.AskRequested;
 import stock.trading.domain.BidRequested;
-import stock.trading.domain.Sold;
 import stock.trading.domain.Tested;
 
 @Entity
@@ -38,9 +37,6 @@ public class Request {
 
         AskRequested askRequested = new AskRequested(this);
         askRequested.publishAfterCommit();
-
-        Sold sold = new Sold(this);
-        sold.publishAfterCommit();
     }
 
     @PostUpdate
@@ -84,6 +80,9 @@ public class Request {
     public void sell() {
         if(true){
         }
+
+        Sold sold = new Sold(this);
+        sold.publishAfterCommit();
     }
 
     public void test() {
