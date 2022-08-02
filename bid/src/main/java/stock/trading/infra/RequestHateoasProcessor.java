@@ -14,6 +14,11 @@ public class RequestHateoasProcessor
     public EntityModel<Request> process(EntityModel<Request> model) {
         model.add(
             Link
+                .of(model.getRequiredLink("self").getHref() + "/buy")
+                .withRel("buy")
+        );
+        model.add(
+            Link
                 .of(model.getRequiredLink("self").getHref() + "/sell")
                 .withRel("sell")
         );

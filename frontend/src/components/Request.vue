@@ -66,6 +66,14 @@
                     v-if="!editMode"
                     color="deep-purple lighten-2"
                     text
+                    @click="buy"
+            >
+                Buy
+            </v-btn>
+            <v-btn
+                    v-if="!editMode"
+                    color="deep-purple lighten-2"
+                    text
                     @click="sell"
             >
                 Sell
