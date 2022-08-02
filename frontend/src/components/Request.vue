@@ -62,6 +62,14 @@
         </v-card-actions>
         <v-card-actions>
             <v-spacer></v-spacer>                        
+            <v-btn
+                    v-if="!editMode"
+                    color="deep-purple lighten-2"
+                    text
+                    @click="sell"
+            >
+                Sell
+            </v-btn>
         </v-card-actions>
 
         <v-snackbar
