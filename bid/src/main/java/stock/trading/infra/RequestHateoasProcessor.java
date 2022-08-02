@@ -37,6 +37,11 @@ public class RequestHateoasProcessor
                 .of(model.getRequiredLink("self").getHref() + "/option2")
                 .withRel("option2")
         );
+        model.add(
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/option3")
+                .withRel("option3")
+        );
 
         return model;
     }
