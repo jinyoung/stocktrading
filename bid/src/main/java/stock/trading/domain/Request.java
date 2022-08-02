@@ -74,16 +74,22 @@ public class Request {
         return requestRepository;
     }
 
-    public void buy() {}
+    public void buy() {
+
+        System.out.println("bought");
+        Bought bought = new Bought(this);
+        bought.publishAfterCommit();
+    }
 
     public void sell() {
         if(true){
-            Bought bought = new Bought(this);
-            bought.publishAfterCommit();
         }
     }
 
-    public void test() {}
+    public void test() {
+        System.out.println("test");
+
+    }
 
     public static void changeState(Traded traded) {
         /** Example 1:  new item */
