@@ -71,33 +71,23 @@ public class Request {
     }
 
     public void buy() {
-
-        System.out.println("bought");
         Bought bought = new Bought(this);
         bought.publishAfterCommit();
     }
 
     public void sell() {
-        if(true){
-        }
-
         Sold sold = new Sold(this);
         sold.publishAfterCommit();
     }
 
-    public void test() {
-        System.out.println("test");
-
-    }
-
-    public void option() {}
+    public void test() {}
 
     public static void changeState(Traded traded) {
-        /** Example 1:  new item */
+        /** Example 1:  new item 
         Request request = new Request();
         repository().save(request);
 
-        
+        */
 
         /** Example 2:  finding and process
         
