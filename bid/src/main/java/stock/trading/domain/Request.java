@@ -7,7 +7,6 @@ import lombok.Data;
 import stock.trading.BidApplication;
 import stock.trading.domain.AskRequested;
 import stock.trading.domain.BidRequested;
-import stock.trading.domain.Bought;
 import stock.trading.domain.Sold;
 import stock.trading.domain.Tested;
 
@@ -46,9 +45,6 @@ public class Request {
 
     @PostUpdate
     public void onPostUpdate() {
-        Bought bought = new Bought(this);
-        bought.publishAfterCommit();
-
         Tested tested = new Tested(this);
         tested.publishAfterCommit();
     }
@@ -76,6 +72,11 @@ public class Request {
             RequestRepository.class
         );
         return requestRepository;
+    }
+
+    public void sell() {
+        Bought bought = new Bought(this);
+        bought.publishAfterCommit();
     }
 
     public static void changeState(Traded traded) {

@@ -12,6 +12,12 @@ public class RequestHateoasProcessor
 
     @Override
     public EntityModel<Request> process(EntityModel<Request> model) {
+        model.add(
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/sell")
+                .withRel("sell")
+        );
+
         return model;
     }
 }
