@@ -97,7 +97,7 @@ public class Request {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process*/
         
         repository().findById(traded.get???()).ifPresent(request->{
             
@@ -106,7 +106,7 @@ public class Request {
 
 
          });
-        */
+        
 
     }
 }
