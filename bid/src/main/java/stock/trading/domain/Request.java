@@ -7,7 +7,6 @@ import lombok.Data;
 import stock.trading.BidApplication;
 import stock.trading.domain.AskRequested;
 import stock.trading.domain.BidRequested;
-import stock.trading.domain.Sold;
 import stock.trading.domain.Tested;
 
 @Entity
@@ -38,9 +37,6 @@ public class Request {
 
         AskRequested askRequested = new AskRequested(this);
         askRequested.publishAfterCommit();
-
-        Sold sold = new Sold(this);
-        sold.publishAfterCommit();
     }
 
     @PostUpdate
@@ -74,11 +70,14 @@ public class Request {
         return requestRepository;
     }
 
-    public void buy() {}
-
-    public void sell() {
+    public void buy() {
         Bought bought = new Bought(this);
         bought.publishAfterCommit();
+    }
+
+    public void sell() {
+        Sold sold = new Sold(this);
+        sold.publishAfterCommit();
     }
 
     public void test() {}
