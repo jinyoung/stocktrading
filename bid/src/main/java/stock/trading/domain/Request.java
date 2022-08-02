@@ -90,6 +90,8 @@ public class Request {
 
     }
 
+    public void option() {}
+
     public static void changeState(Traded traded) {
         /** Example 1:  new item */
         Request request = new Request();
