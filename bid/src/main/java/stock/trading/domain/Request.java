@@ -74,6 +74,8 @@ public class Request {
         return requestRepository;
     }
 
+    public void buy() {}
+
     public void sell() {
         Bought bought = new Bought(this);
         bought.publishAfterCommit();
