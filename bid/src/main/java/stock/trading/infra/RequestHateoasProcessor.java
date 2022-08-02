@@ -22,6 +22,11 @@ public class RequestHateoasProcessor
                 .of(model.getRequiredLink("self").getHref() + "/sell")
                 .withRel("sell")
         );
+        model.add(
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/test")
+                .withRel("test")
+        );
 
         return model;
     }

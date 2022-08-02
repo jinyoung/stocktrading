@@ -81,6 +81,8 @@ public class Request {
         bought.publishAfterCommit();
     }
 
+    public void test() {}
+
     public static void changeState(Traded traded) {
         /** Example 1:  new item 
         Request request = new Request();
